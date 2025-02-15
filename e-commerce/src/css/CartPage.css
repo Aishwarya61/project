@@ -1,0 +1,119 @@
+/* cartpage.css */
+.cart-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 5px; /* Rounded corners for image */
+}
+
+.cart-details {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Space between details */
+}
+
+.cart-product-name {
+  font-weight: bold;
+  margin-bottom: 5px; /* Space below product name */
+}
+
+.cart-price {
+  color: #888;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* overflow: hidden; Keep this to prevent content from overflowing */
+  width: 100px; /* Set a specific width for the quantity selector */
+}
+
+.quantity-button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex; /* Use flexbox for centering */
+  align-items: center;
+  justify-content: center;
+  width: 30px; /* Set a fixed width for the buttons */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.quantity-selector span {
+  padding: 5px; /* Reduced padding */
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 40px; /* Set a specific width for the number display */
+  text-align: center; /* Center the number */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+}
+.quantity-button:hover {
+  background-color: #ddd;
+}
+
+
+.remove-button {
+  background-color: #dc3545; /* Red color for remove button */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.remove-button:hover {
+  background-color: #c12a36; /* Darker red on hover */
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.checkout-button {
+  background-color: #007bff; /* Blue color for checkout button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  margin-top: 20px; /* Add some top margin */
+  display: inline-block; /* Make the button inline */
+}
+
+.checkout-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.empty-cart {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}

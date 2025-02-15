@@ -1,0 +1,31 @@
+.banner-image {
+    height: 500px; /* Adjust height as needed */
+    object-fit: cover;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-caption .btn {
+    background-color: #ff6200; /* Adjust to match your theme */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-caption .btn:hover {
+    background-color: #e85d00; /* Hover effect */
+  }
+  

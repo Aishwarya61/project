@@ -1,0 +1,100 @@
+.footer {
+    background: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    color: white; /* Light text color */
+    padding: 20px 0; /* Add padding top/bottom */
+    font-family: sans-serif; /* Use a clean font */
+}
+
+.container {
+    max-width: 1200px; /* Wider container to accommodate more content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding left/right */
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Distribute sections evenly */
+}
+
+.footer-section {
+    width: 22%; /* Set a width for each section (adjust as needed) */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+}
+
+.footer-section h4 {
+    font-weight: bold;
+    font-size: 1.2rem; /* Set font size for headings */
+    margin-bottom: 10px; /* Add margin bottom for spacing */
+    color: rgb(246, 144, 80); /* Orange color for headings */
+}
+
+.footer-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-section li {
+    margin-bottom: 5px; /* Add margin bottom for spacing */
+}
+
+.footer-section a {
+    color: #fff; /* Set link color */
+    text-decoration: none; /* Remove underlines */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.footer-section a:hover {
+    color: #FF9900; /* Orange color on hover */
+}
+
+.contact-info p {
+    margin: 5px 0; /* Add margin for spacing */
+}
+
+.social-icons {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for layout */
+}
+
+.social-icons li {
+    margin-right: 10px; /* Add margin right for spacing */
+}
+
+.social-icons a {
+    color: #fff; /* Set icon color */
+    font-size: 1.2rem; /* Set icon size */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.social-icons a:hover {
+    color: #FF9900; /* Orange color on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Center the copyright text */
+    padding-top: 20px; /* Add padding top for spacing */
+    /* border-top: 1px solid #666; Add a separator line */
+    font-size: 0.9rem; /* Slightly smaller font size for copyright */
+    color:white; /* Slightly lighter color for copyright */
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+    .footer-section {
+        width: 45%; /* Two sections per row on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .footer-section.contact-info {
+        width: 100%; /* Contact info takes full width */
+    }
+}
+
+@media (max-width: 500px) {
+  .footer-section {
+      width: 100%; /* One section per row on very small screens */
+      position: static;
+  }
+}
