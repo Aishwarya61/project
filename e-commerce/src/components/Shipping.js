@@ -9,9 +9,10 @@ const Shipping = () => {
     };
 
     const headingStyle = {
-        fontSize: '2rem',
+        fontSize: '2.3rem',
         marginBottom: '10px',
-        color: '#333',
+        color: 'orange',
+        textAlign : 'center',
     };
 
     const sectionStyle = {
@@ -43,6 +44,46 @@ const Shipping = () => {
 
 
     return (
+        <>
+        <style>{`
+        @media (max-width: 768px) {
+                        h1 {
+                            font-size: 1.8rem;
+                        }
+
+                        h2 {
+                            font-size: 1.1rem;
+                        }
+
+                        p, li {
+                            font-size: 0.95rem;
+                        }
+
+                        .container {
+                            padding: 15px;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                        h1 {
+                            font-size: 1.5rem;
+                        }
+
+                        h2 {
+                            font-size: 1rem;
+                        }
+
+                        p, li {
+                            font-size: 0.9rem;
+                        }
+
+                        .container {
+                            padding: 10px;
+                        }
+                    }
+        `}
+
+        </style>
         <div style={containerStyle}>
             <h1 style={headingStyle}>Shipping & Delivery</h1>
 
@@ -95,6 +136,7 @@ const Shipping = () => {
             </div>
 
         </div>
+    </>
     );
 };
 

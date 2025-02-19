@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 // import { FaUserCircle } from "react-icons/fa";
 import "../css/Header.css";
 
@@ -9,6 +9,8 @@ const Header = ({ cart = [] }) => {
   const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [cartItems, setCartItems] = useState(cart.length); 
+  
 
   // useEffect(() => {
   //   const user = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -28,11 +30,19 @@ const Header = ({ cart = [] }) => {
       window.removeEventListener("storage", updateUser);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   // setCartItems(storedCart.length);
+  // }, [cart]); 
+
   const handleLogout = () => {
     localStorage.removeItem("userToken");
     localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("cart"); 
     // window.location.reload(); // Refresh UI
     setLoggedInUser(null);
+    // setCartItems(0);
   };
   
   const handleSearch = () => {
@@ -70,17 +80,16 @@ const Header = ({ cart = [] }) => {
                 <li><NavLink className="dropdown-item" to="/category/camera">Camera and accessories</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/tablet">Tablet and accessories</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/printer">Printer and accessories</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/category/smart-watches">Smart Watches</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/category/others">Smart Watches</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/speakers">Speakers</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/category/earpods">Earpods</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/category/backcover">Mobile BackCover</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/mouse">Mouse</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/keyboard">Keyboard and accessories</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/category/powerbank">Powerbank</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/mobile-holder">Mobile Holder</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/selfie-stick">Selfie stick</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/batteries">Battery</NavLink></li>
                 <li><NavLink className="dropdown-item" to="/category/screen-protector">Screen protector</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/category/washing-machine">Washing machine</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/category/washing machine">Washing machine</NavLink></li>
               </ul>
             </div>
 
@@ -105,8 +114,8 @@ const Header = ({ cart = [] }) => {
 
           {/* Cart Icon with Badge */}
           <Link to="/cart" className="cart-icon">
-            <i className="bi bi-cart-fill" style={{marginRight:"20px"}}></i>
-            {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+            <i className="bi bi-cart-fill"></i>
+            {/* {cartItems > 0 && <span className="cart-count">{cartItems}</span>} */}
           </Link>
 
           {/* Sign In */}

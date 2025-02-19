@@ -1,31 +1,111 @@
 .banner-image {
-    height: 500px; /* Adjust height as needed */
-    object-fit: cover;
+  height: 500px; /* Default height */
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Adjusting captions for better responsiveness */
+.carousel-caption {
+  bottom: 20%;
+}
+
+/* Responsive heading size */
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive paragraph size */
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive button */
+.carousel-caption .btn {
+  background-color: #ff6200; /* Theme color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #e85d00; /* Hover effect */
+}
+
+/* ----- RESPONSIVENESS ----- */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .banner-image {
+      height: 400px; /* Reduce height */
   }
-  
+
   .carousel-caption h5 {
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-size: 1.8rem; /* Adjust font size */
   }
-  
+
   .carousel-caption p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      font-size: 1rem;
   }
-  
+
   .carousel-caption .btn {
-    background-color: #ff6200; /* Adjust to match your theme */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    color: white;
-    transition: background-color 0.3s ease;
+      padding: 8px 15px;
+      font-size: 0.9rem;
   }
-  
-  .carousel-caption .btn:hover {
-    background-color: #e85d00; /* Hover effect */
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .banner-image {
+      height: 300px; /* Reduce height further */
   }
-  
+
+  .carousel-caption {
+      bottom: 10%; /* Move caption higher */
+      text-align: center;
+  }
+
+  .carousel-caption h5 {
+      font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+      font-size: 0.9rem;
+  }
+
+  .carousel-caption .btn {
+      padding: 7px 12px;
+      font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+  .banner-image {
+      height: 250px; /* Minimized height */
+  }
+
+  .carousel-caption {
+      bottom: 5%; /* Adjust position */
+      padding: 10px;
+  }
+
+  .carousel-caption h5 {
+      font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+      font-size: 0.8rem;
+  }
+
+  .carousel-caption .btn {
+      padding: 6px 10px;
+      font-size: 0.75rem;
+  }
+}

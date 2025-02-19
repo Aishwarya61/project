@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Login from './Login'; // Import your Login component
 import SignUp from './SignIn'; // Import your SignUp component
-import '../css/Auth.css'; // Import your CSS (adjust path if needed)
+// import '../css/Auth.css'; // Import your CSS (adjust path if needed)
 
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
 
   const handleLoginSuccess = () => {
+    console.log("Login success function called");
     const from = location.state?.from?.pathname || "/";
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
+    window.location.href = from; 
   };
 
   

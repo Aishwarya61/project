@@ -1,4 +1,5 @@
-import React from 'react';
+import React ,{useState} from 'react';
+
 
 const FAQ = () => {
     const containerStyle = {
@@ -6,12 +7,21 @@ const FAQ = () => {
         margin: '20px auto',
         padding: '20px',
         fontFamily: 'sans-serif',
+        '@media (max-width: 768px)': {
+            maxWidth: '90%',
+            padding: '10px',
+        },
     };
 
-    const headingStyle = {
-        fontSize: '2rem',
+    const headingFAQ = {
+        fontSize: '2.3rem',
+        color:'orange',
         marginBottom: '10px',
-        color: '#333',
+        textAlign: 'center',
+        marginBottom: '30px',
+        '@media (max-width: 768px)': {
+            fontSize: '1.8rem',
+        },
     };
 
     const faqItemStyle = {
@@ -25,19 +35,26 @@ const FAQ = () => {
         fontWeight: 'bold',
         marginBottom: '5px',
         color: '#333',
-        cursor: 'pointer', // Make question clickable
+        cursor: 'pointer',
+        cursor: 'pointer',
+        '@media (max-width: 768px)': {
+            fontSize: '1rem',
+        },
     };
 
     const answerStyle = {
         fontSize: '1rem',
         lineHeight: '1.6',
         color: '#666',
-        maxHeight: '0', // Initially hidden
+        maxHeight: '0',
         overflow: 'hidden',
-        transition: 'max-height 0.3s ease-in-out', // Smooth transition
+        transition: 'max-height 0.3s ease-in-out', 
+        '@media (max-width: 768px)': {
+            fontSize: '0.9rem',
+        },
     };
 
-    const [expandedQuestion, setExpandedQuestion] = React.useState(null);
+    const [expandedQuestion, setExpandedQuestion] = useState(null);
 
     const toggleAnswer = (question) => {
         setExpandedQuestion(expandedQuestion === question ? null : question);
@@ -45,7 +62,7 @@ const FAQ = () => {
 
     return (
         <div style={containerStyle}>
-            <h1 style={headingStyle}>Frequently Asked Questions</h1>
+            <h1 style={headingFAQ}>Frequently Asked Questions</h1>
 
             <div style={faqItemStyle}>
                 <h2

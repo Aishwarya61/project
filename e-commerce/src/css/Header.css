@@ -11,7 +11,8 @@
 
 /* Brand Name */
 .brand-text {
-    font-size: 24px;
+    font-size: 30px;
+    margin-left: 3px;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
@@ -22,7 +23,7 @@
 
 .brand-text:hover {
     transform: scale(1.1);
-    color: #ffcc00;
+    /* color: #f6a708; */
 }
 
 .brand-svg {
@@ -35,7 +36,7 @@
 
 .brand-svg:hover {
     transform: scale(1.2);
-    stroke: #e6b800;
+    stroke: #f6a708;
 }
 
 /* Search Bar */
@@ -67,7 +68,7 @@
     white-space: nowrap;
 }
 .dropdown-toggle:hover {
-    background: #2980b9; /* Darker blue on hover */
+    background: #f6a708; /* Darker blue on hover */
     transform: scale(1.05);
 }
 
@@ -104,7 +105,7 @@
 
 .search-bar input:focus {
     box-shadow: none;
-    border: 1px solid #3498db; 
+    border: 1px solid #f6a708; 
 }
 
 /* Search Button */
@@ -125,7 +126,7 @@
 
 .search-btn:hover {
     transform: scale(1.1);
-    background-color: #2980b9;
+    background-color: #f6a708;
 }
 
 .search-container { /* New positioning context */
@@ -185,7 +186,120 @@
 }
 
 .sign-in-btn:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+    background-color: #f6a708; /* Darker blue on hover */
     transform: scale(1.1);
+}
+.login-btn {
+    background-color:  #FF9900; /* Yellow color */
+    color: white;
+    height: 45px;
+    width: 80px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 29px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.login-btn:hover {
+    background-color: #f6a708; /* Darker yellow */
+    transform: scale(1.05);
+}
+@media (max-width: 991px) {
+    .container-fluid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand-text {
+        font-size: 20px;
+    }
+
+    .search-container {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .search-bar input {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .search-btn {
+        height: 40px;
+        width: 40px;
+        font-size: 14px;
+    }
+
+    .location {
+        display: none; /* Hide location on smaller screens */
+    }
+
+    .cart-icon {
+        font-size: 20px;
+    }
+
+    .login-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* User dropdown menu */
+    .user-dropdown {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 150px;
+        text-align: center;
+    }
+
+    /* Hide cart badge on mobile */
+    .cart-count {
+        display: none;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .search-btn {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .cart-icon {
+        margin-right: 0;
+    }
 }
 

@@ -7,7 +7,7 @@ function Category() {
   const [productSections, setProductSections] = useState({
     Mobile: [],
     Printer: [],
-    Speakers: [],
+    Headphones: [],
   });
   const carouselRefs = useRef({});
 
@@ -25,7 +25,7 @@ function Category() {
         const sections = {
           Mobile: data.filter((item) => item.classified_category === "mobile").slice(0, 20),
           Printer: data.filter((item) => item.classified_category === "laptop").slice(0, 20),
-          Speakers: data.filter((item) => item.classified_category === "headphones").slice(0, 20),
+          Headphones: data.filter((item) => item.classified_category === "headphones").slice(0, 20),
         };
 
         setProductSections(sections);
@@ -69,13 +69,14 @@ function Category() {
             >
               {products.map((item, index) => (
                 <div key={index} className="category-card">
-                  <img src={item.image} alt={item.name} />
-                  <p>Price: {item.discount_price}</p>
+                  <br/>
+                  <br/>
+                  {/* <p>Price: {item.discount_price}</p> */}
                   <Link
                     to={`/product/${encodeURIComponent(item.name)}`}
                     className="view-details-button"
                   >
-                    View Details
+                     <img src={item.image} alt={item.name} />
                   </Link>
                 </div>
               ))}

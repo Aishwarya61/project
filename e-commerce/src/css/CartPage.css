@@ -3,7 +3,11 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
+}
+.cart-title{
+  color:orange;
+  text-align: center;
 }
 
 .cart-item {

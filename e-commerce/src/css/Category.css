@@ -57,8 +57,12 @@
   object-fit: contain;
   margin-bottom: 10px;
 }
+.category-card:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
 
-.category-card .view-details-button {
+/* .category-card .view-details-button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -71,7 +75,7 @@
 
 .category-card .view-details-button:hover {
   background-color: #0056b3;
-}
+} */
 
 .arrow-button {
   position: absolute;

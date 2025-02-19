@@ -9,118 +9,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-detail-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.close-button {
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.product-detail-content {
-  display: flex;
-  gap: 20px;
-}
-
-.product-detail-image img {
-  max-width: 350px;
-  max-height: 400px;
-  object-fit: contain;
-}
-
-.product-detail-info {
-  flex: 1;
-}
-
-.product-detail-info h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.product-detail-info p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* Features Table */
-.features-section {
-  margin-top: 20px;
-}
-
-.features-section h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.features-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.features-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.feature-key {
-  font-weight: bold;
-  width: 40%;
-}
-
-/* About This Item */
-.about-section {
-  margin-top: 20px;
-}
-
-.about-section h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.about-section ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-/* Buttons */
-.buy-button,
-.add-to-cart-button {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  margin-right: 10px;
-}
-
-.buy-button:hover {
-  background-color: #0056b3;
-  
-}
-
-.add-to-cart-button {
-  background-color: #28a745;
-}
-
-.add-to-cart-button:hover {
-  background-color: #218838;
-}
-.product-detail-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Close Button */
 .product-detail-header {
   display: flex;
   justify-content: flex-end;
@@ -134,22 +23,27 @@
   color: red;
 }
 
+/* Product Content Layout */
 .product-detail-content {
   display: flex;
   gap: 20px;
 }
 
+/* Product Image */
 .product-detail-image img {
-  width: 300px;
+  width: 350px;
+  max-height: 400px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
+/* Product Info */
 .product-detail-info {
   flex: 1;
 }
 
-h1 {
-  font-size: 22px;
+.product-detail-info h1 {
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
@@ -227,3 +121,93 @@ del {
   color: white;
 }
 
+/* ---------- RESPONSIVENESS ---------- */
+
+/* Tablets (Medium Screens) */
+@media (max-width: 992px) {
+  .product-detail-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-detail-image img {
+    width: 80%; /* Adjust image size */
+    max-height: 350px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 22px;
+  }
+
+  .discount-price {
+    font-size: 18px;
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons */
+  }
+
+  .buy-button, .add-to-cart-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .product-detail-container {
+    padding: 15px;
+  }
+
+  .product-detail-image img {
+    width: 100%; /* Full width */
+    max-height: 300px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 20px;
+  }
+
+  .discount-price {
+    font-size: 16px;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .buy-button, .add-to-cart-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .product-features td {
+    padding: 6px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .product-detail-container {
+    padding: 10px;
+  }
+
+  .product-detail-image img {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 18px;
+  }
+
+  .discount-price {
+    font-size: 14px;
+  }
+
+  .buy-button, .add-to-cart-button {
+    font-size: 12px;
+    padding: 6px;
+  }
+}

@@ -26,27 +26,65 @@ const ProductDetail = ({ addToCart }) => {
 
     fetchProduct();
   }, [productName]);
-  // const isLoggedIn = !!localStorage.getItem("userToken");
+
   const handleAddToCart = () => {
-    const isLoggedIn = !!localStorage.getItem("userToken"); // Check dynamically
-    if (!isLoggedIn) {
-    
+    const isLoggedIn = !!localStorage.getItem("userToken"); // Check if logged in
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    console.log("User Token:", isLoggedIn);
+  console.log("Logged In User:", loggedInUser);
+
+    if (!isLoggedIn || !loggedInUser) {
       navigate("/auth", { state: { from: { pathname: window.location.pathname } } });
       return;
     }
-    addToCart(product);
-  };
-  
-  const handleBuyNow = () => {
-    const isLoggedIn = !!localStorage.getItem("userToken"); // Check dynamically
-    if (!isLoggedIn) {
-   
-      navigate("/auth", { state: { from: { pathname: window.location.pathname } } });
-      return;
+
+    if (!product) return; // Ensure product exists before proceeding
+
+    // Retrieve cart for the logged-in user
+    let userCart = JSON.parse(localStorage.getItem(`cart_${loggedInUser.email}`)) || [];
+
+    // Check if the product already exists in the cart
+    const existingProduct = userCart.find((item) => item.name === product.name);
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      userCart.push({ ...product, quantity: 1 });
     }
-    navigate("/payment", { state: { cart: [product] } });
+
+    // Save updated cart in localStorage
+    localStorage.setItem(`cart_${loggedInUser.email}`, JSON.stringify(userCart));
+
+    // Optionally update the cart in the parent component
+    if (addToCart) {
+      setTimeout(() => {
+        addToCart(userCart);
+        alert("Added to Cart!");
+      }, 500);
+    }
   };
 
+  const handleBuyNow = () => {
+    const isLoggedIn = !!localStorage.getItem("userToken");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!isLoggedIn || !loggedInUser) {
+      // alert("Please log in to proceed with purchase!");
+      setTimeout(() => {
+        navigate("/auth", { state: { from: { pathname: window.location.pathname } } });
+      }, 800);  // ✅ Delaying redirect to make the alert visible
+      return;
+    }
+    
+    const orderItem = {
+      name: product.name,
+      discount_price: product.discount_price, // Pass the full value (string with ₹)
+      quantity: 1,
+      image: product.image
+    };
+    navigate("/payment", { state: { cart: [orderItem] } });
+   
+   
+  };
 
   if (loading) return <p>Loading product details...</p>;
   if (!product) return <p>Product not found</p>;
@@ -70,11 +108,7 @@ const ProductDetail = ({ addToCart }) => {
         {/* Product Information */}
         <div className="product-detail-info">
           <h1>{product.name}</h1>
-          
-          {/* Ratings Section */}
           <p><strong>Ratings:</strong> ⭐ {product.ratings} ({product.no_of_ratings} reviews)</p>
-
-          {/* Pricing Section */}
           <p><strong>Price:</strong> <span className="discount-price">{product.discount_price}</span></p>
           <p><strong>Original Price:</strong> <del>{product.actual_price}</del></p>
 
@@ -103,32 +137,15 @@ const ProductDetail = ({ addToCart }) => {
             </ul>
           </div>
 
-          {/* Buttons in One Line */}
+          {/* Buttons */}
           <div className="button-container">
-        <button
-          className="buy-button"
-          onClick={handleBuyNow}
-        >
-          Buy Now
-        </button>
-        <button
-          className="add-to-cart-button"
-          onClick={handleAddToCart} // Conditional onClick
-        >
-          Add to Cart
-        </button>
-        {/* {!isLoggedIn && (
-          <p className="login-message">
-            Please <a href="/auth">login</a> to continue.
-          </p>
-        )} */}
-    
-      </div>
-          {/* </div> */}
+            <button className="buy-button" onClick={handleBuyNow}>Buy Now</button>
+            <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductDetail;  
+export default ProductDetail;

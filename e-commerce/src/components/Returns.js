@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React from 'react'
+import '../css/Returns.css'
 const Returns = () => {
     const containerStyle = {
         maxWidth: '960px',
@@ -9,9 +9,10 @@ const Returns = () => {
     };
 
     const headingStyle = {
-        fontSize: '2rem',
+        fontSize: '2.3rem',
         marginBottom: '10px',
-        color: '#333',
+        color: 'orange',
+        textAlign : 'center',
     };
 
     const sectionStyle = {
@@ -62,7 +63,7 @@ const Returns = () => {
                 <h2 style={sectionHeadingStyle}>How to Initiate a Return</h2>
                 <p style={paragraphStyle}>To initiate a return, please follow these steps:</p>
                 <ol style={listStyle}>
-                    <li style={listItemStyle}>Contact our customer support team within [Number] days of delivery at <a href="mailto:aishwarya610@gmail.com" style={{ color: 'blue', textDecoration: 'none' }}>support@electrox.com</a> or call us at <a href="tel:+91-9558211227" style={{ color: 'blue', textDecoration: 'none' }}>+91-9558211227</a>.</li>
+                    <li style={listItemStyle}>Contact our customer support team within [Number] days of delivery at <a href="mailto:support@electrox.com" style={{ color: 'blue', textDecoration: 'none' }}>support@electrox.com</a> or call us at <a href="tel:+91-9558211227" style={{ color: 'blue', textDecoration: 'none' }}>+91-9558211227</a>.</li>
                     <li style={listItemStyle}>Provide your order number and details of the item you wish to return.</li>
                     <li style={listItemStyle}>Our customer support team will provide you with a Return Authorization (RA) number and instructions for returning the item.</li>
                     <li style={listItemStyle}>Pack the item securely in its original packaging and ship it to the address provided by our customer support team.</li>

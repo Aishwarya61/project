@@ -1,0 +1,154 @@
+/* About.css */
+.about-container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.about-title {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    color: orange;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.about-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.about-section:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.about-section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.about-section:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.about-section:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.about-section:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+.about-section-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    text-decoration: underline orange;
+    text-underline-offset: 5px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #666;
+    text-align: justify;
+}
+
+.contact-link {
+    color: blue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* Example breakpoint - adjust as needed */
+    .about-container {
+        max-width: 90%; /* Or a specific pixel value */
+        padding: 15px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-section-title {
+        font-size: 1.8rem; /* Adjust title size */
+    }
+
+    .about-text {
+        font-size: 0.9rem; /* Smaller text on mobile */
+        text-align: left; /* Align text left on smaller screens */
+    }
+
+    .about-image {
+        max-width: 90%; /* Make images smaller on mobile */
+    }
+}
+
+/* More specific adjustments for even smaller screens if needed */
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-section-title {
+        font-size: 1.6rem;
+    }
+}
